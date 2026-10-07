@@ -1,0 +1,22 @@
+{
+  "tracks": [
+    {
+      "type": "video",
+      "source": "input/base.mp4",
+      "transform": [
+        { "time": 5, "freeze": true },
+        { "time": 8, "freeze": false }
+      ]
+    },
+    {
+      "type": "video",
+      "source": "input/overlay.mp4",
+      "transform": [
+        { "time": 0, "scale": 0.3, "anchor": "bottom-right", "padding": 30 },
+        { "time": 5, "fullscreen": true },
+        { "time": 8, "scale": 0.3, "anchor": "top-left", "padding": 30 },
+        { "time": 12, "visible": false }
+      ]
+    }
+  ]
+}
