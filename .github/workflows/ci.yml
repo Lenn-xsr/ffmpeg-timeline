@@ -21,7 +21,11 @@ jobs:
 
       # The integration test renders a generated clip end to end.
       - name: Install ffmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+        run: |
+          # Skip the man-db trigger and recommended packages: they dominate the install time.
+          sudo rm -f /var/lib/man-db/auto-update
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
 
       - run: npm ci
       - run: npm run build
