@@ -1,0 +1,54 @@
+{
+  "name": "ffmpeg-timeline",
+  "version": "0.1.0",
+  "description": "Compiles a JSON video timeline (base track, picture-in-picture overlays, freeze frames) into a single FFmpeg filter_complex invocation",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "ffmpeg-timeline": "dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "sample": "node scripts/generate-sample.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^20.19.43",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^4.1.11"
+  },
+  "keywords": [
+    "ffmpeg",
+    "filter-complex",
+    "video",
+    "timeline",
+    "compositing",
+    "overlay",
+    "picture-in-picture",
+    "freeze-frame",
+    "cli"
+  ]
+}

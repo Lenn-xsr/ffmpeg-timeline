@@ -1,0 +1,8 @@
+node_modules/
+dist/
+
+# Media is generated locally (npm run sample) or rendered; never committed.
+input/*
+!input/.gitkeep
+output/*
+!output/.gitkeep
